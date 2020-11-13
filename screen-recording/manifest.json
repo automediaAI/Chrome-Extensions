@@ -58,6 +58,7 @@
       "activeTab",
       "<all_urls>",
       "identity",
+      "downloads",
       "https://www.googleapis.com/*"
    ],
    "oauth2": {

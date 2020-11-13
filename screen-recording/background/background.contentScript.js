@@ -50,6 +50,9 @@ function RecordRTC_Extension(config) {
         fixVideoSeekingIssues: false,
         height: 1080,
         width: 1920,
+        sendBlobInMessage: true,
+        saveFileAsDownload: false,
+        saveFileName: null,
     };
 
     var startCallback = function() {
@@ -70,6 +73,9 @@ function RecordRTC_Extension(config) {
         'fixVideoSeekingIssues',
         'height',
         'width',
+        'sendBlobInMessage',
+        'saveFileAsDownload',
+        'saveFileName',
     ];
 
     window.addEventListener('message', function(event) {

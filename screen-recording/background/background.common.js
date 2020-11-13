@@ -26,6 +26,10 @@ var openCameraPreviewDuringRecording = true;
 
 var fixVideoSeekingIssues = false;
 
+var sendBlobInMessage = true;
+var saveFileAsDownload = false;
+var saveFileName = null;
+
 function isMediaRecorderCompatible() {
     return true;
 }
