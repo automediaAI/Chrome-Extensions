@@ -70,6 +70,7 @@ chrome.runtime.onConnect.addListener(function(port) {
                 sendBlobInMessage = 'sendBlobInMessage' in message ? message['sendBlobInMessage'] === true : true;
                 saveFileAsDownload = 'sendBlobInMessage' in message ? message['saveFileAsDownload'] === true : false;
                 saveFileName = 'saveFileName' in message ? message['saveFileName'] : null;
+                videoCodec = 'videoCodec' in message ? message['videoCodec'] : 'Default';
 
                 startRecordingCallback = function(file) {
                     port.postMessage({
@@ -91,6 +92,7 @@ chrome.runtime.onConnect.addListener(function(port) {
                     sendBlobInMessage: sendBlobInMessage ? 'true' : 'false',
                     saveFileAsDownload: saveFileAsDownload ? 'true' : 'false',
                     saveFileName: saveFileName ? `${saveFileName}` : 'null',
+                    videoCodec: videoCodec,
                 }, function() {
                     getUserConfigs();
                 });

@@ -53,6 +53,7 @@ function RecordRTC_Extension(config) {
         sendBlobInMessage: true,
         saveFileAsDownload: false,
         saveFileName: null,
+        videoCodec: 'Default',
     };
 
     var startCallback = function() {
@@ -76,6 +77,7 @@ function RecordRTC_Extension(config) {
         'sendBlobInMessage',
         'saveFileAsDownload',
         'saveFileName',
+        'videoCodec',
     ];
 
     window.addEventListener('message', function(event) {
