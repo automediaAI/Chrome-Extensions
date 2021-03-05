@@ -45,7 +45,8 @@ function MediaStreamRecorder(mediaStream, config) {
 
     config = config || {
         // bitsPerSecond: 256 * 8 * 1024,
-        mimeType: 'video/webm'
+        bitsPerSecond: 8000000000,
+        mimeType: 'video/webm;codecs=vp9'
     };
 
     if (config.type === 'audio') {

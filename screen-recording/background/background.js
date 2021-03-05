@@ -309,6 +309,9 @@ function setDefaults() {
     videoResolutions = '1920x1080';
     isRecordingVOD = false;
     fixVideoSeekingIssues = false;
+    sendBlobInMessage = true;
+    saveFileAsDownload = false;
+    saveFileName = null;
 
     // for dropdown.js
     chrome.storage.sync.set({
@@ -368,6 +371,18 @@ function getUserConfigs() {
 
         if(items['fixVideoSeekingIssues']) {
             fixVideoSeekingIssues = items['fixVideoSeekingIssues'] === 'true';
+        }
+
+        if(items['sendBlobInMessage']) {
+            sendBlobInMessage = items['sendBlobInMessage'] === 'true';
+        }
+
+        if(items['saveFileAsDownload']) {
+            saveFileAsDownload = items['saveFileAsDownload'] === 'true';
+        }
+
+        if (items['saveFileName'] && items['saveFileName'].toString().length) {
+            saveFileName = items['saveFileName'];
         }
 
         if (enableMicrophone || enableCamera) {

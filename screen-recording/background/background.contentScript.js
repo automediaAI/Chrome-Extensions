@@ -1,4 +1,4 @@
-﻿var port = chrome.runtime.connect();
+var port = chrome.runtime.connect();
 port.onMessage.addListener(function(message) {
     message.messageFromContentScript1234 = true
     window.postMessage(message, '*');
@@ -46,7 +46,15 @@ function RecordRTC_Extension(config) {
         enableScreen: true,
         enableSpeakers: true,
         enableCamera: false,
-        enableMicrophone: false
+        enableMicrophone: false,
+        fixVideoSeekingIssues: false,
+        height: 1080,
+        width: 1920,
+        sendBlobInMessage: true,
+        saveFileAsDownload: false,
+        saveFileName: null,
+        videoCodec: 'Default',
+        bitsPerSecond: 8000000000,
     };
 
     var startCallback = function() {
@@ -57,7 +65,22 @@ function RecordRTC_Extension(config) {
         //
     };
 
-    var supportedValues = ['enableTabCaptureAPI', 'enableTabCaptureAPIAudioOnly', 'enableScreen', 'enableSpeakers', 'enableCamera', 'enableMicrophone'];
+    var supportedValues = [
+        'enableTabCaptureAPI',
+        'enableTabCaptureAPIAudioOnly',
+        'enableScreen',
+        'enableSpeakers',
+        'enableCamera',
+        'enableMicrophone',
+        'fixVideoSeekingIssues',
+        'height',
+        'width',
+        'sendBlobInMessage',
+        'saveFileAsDownload',
+        'saveFileName',
+        'videoCodec',
+        'bitsPerSecond',
+    ];
 
     window.addEventListener('message', function(event) {
         if (event.source != window || !event.data.messageFromContentScript1234) return;
