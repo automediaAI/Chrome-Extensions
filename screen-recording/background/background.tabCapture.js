@@ -14,6 +14,7 @@ function captureTabUsingTabCapture(isNoAudio) {
                     chromeMediaSource: 'tab',
                     maxWidth: videoResolutions.split('x')[0],
                     maxHeight: videoResolutions.split('x')[1],
+                    maxFrameRate: 60,
                 }
             },
             audioConstraints: isNoAudio === true ? false : {

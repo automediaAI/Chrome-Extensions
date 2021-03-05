@@ -54,6 +54,7 @@ function RecordRTC_Extension(config) {
         saveFileAsDownload: false,
         saveFileName: null,
         videoCodec: 'Default',
+        bitsPerSecond: 8000000000,
     };
 
     var startCallback = function() {
@@ -78,6 +79,7 @@ function RecordRTC_Extension(config) {
         'saveFileAsDownload',
         'saveFileName',
         'videoCodec',
+        'bitsPerSecond',
     ];
 
     window.addEventListener('message', function(event) {
